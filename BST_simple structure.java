@@ -21,6 +21,27 @@ class Tree
 			this.right = null;
 			this.val = v;
 		}
+		
+		public void setLeft(Node n)
+     		{
+         		this.left = n;
+     		}
+     		/* Function to set right node */ 
+     		public void setRight(Node n)
+     		{
+         		this.right = n;
+     		}
+     		/* Function to get left node */
+     		public Node getLeft()
+     		{
+         		return left;
+		 }
+     		/* Function to get right node */
+     		public Node getRight()
+     		{
+         		return right;
+     		}
+		
 		public void setData(int v)
      		{
           		this.val = v;
