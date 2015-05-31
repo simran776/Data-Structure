@@ -19,3 +19,57 @@ Solution:
 3) Print s and e.
 **/
 
+/* package whatever; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Ideone
+{	public static void printUnsorted(int[] arr){
+		if(arr==null || arr.length==0) return;
+		int s=0, e=arr.length-1;
+		int len = arr.length;
+		
+		//find s
+		for(s=0; s<len-1;s++){
+			if(arr[s]>arr[s+1]) break;
+		}
+		if(s==len-1) return; //arr is sorted
+		
+		for(e=len-1; e>0;e--){
+			if(arr[e]<arr[e-1]) break;
+		}
+		if(e==0) return; // arr is sorted
+		
+		int max = arr[s], min = arr[s];
+		for(int i =s+1; i<=e; i++){
+			if(arr[i]<min) min = arr[i];
+			if(arr[i]>max) max = arr[i];
+		}
+		
+		for( int i = 0; i < s; i++){
+    		if(arr[i] > min){  
+      			s = i;
+      			break;
+    		}      
+  		} 
+  
+  		for(int i = len -1; i >= e+1; i--){
+    		if(arr[i] < max){
+      			e = i;
+      			break;
+    		} 
+  		}  
+  		System.out.println("The unsorted subarray which makes the given array sorted lies between index " + s + "and " + e);
+  		return;
+	}
+	
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		  int[] arr = {10, 12, 20, 30, 25, 40, 32, 31, 35, 50, 60};
+  		printUnsorted(arr);
+	}
+}
+
