@@ -34,8 +34,7 @@ class Ideone
     	int l = 0, r = n-1;
     	while(l<m && r>=0)
     	{
-       		// If this pair is closer to x than the previously
-       		// found closest, then update res_l, res_r and diff
+       		// If this pair is closer to x than the previously found closest, then update res_l, res_r and diff
        		if(Math.abs(ar1[l] + ar2[r] - x) < diff)
        		{
            		res_l = l;
@@ -43,8 +42,7 @@ class Ideone
            		diff = Math.abs(ar1[l] + ar2[r] - x);
        		}
  
-       		// If sum of this pair is more than x, move to smaller
-       		// side
+       		// If sum of this pair is more than x, move to smaller side
        		if(ar1[l] + ar2[r] > x)
            		r--;
        		else  // move to the greater side
