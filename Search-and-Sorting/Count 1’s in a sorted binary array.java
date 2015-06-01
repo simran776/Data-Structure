@@ -10,4 +10,8 @@ Output: 7
 
 Input: arr[] = {0, 0, 0, 0, 0, 0, 0}
 Output: 0
+
+We can use Binary Search to find count in O(Logn) time. 
+The idea is to look for last occurrence of 1 using Binary Search. Once we find the index last occurrence, 
+we return index + 1 as count.
 **/
