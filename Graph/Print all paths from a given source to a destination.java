@@ -3,6 +3,8 @@
 **/
 /* package whatever; // don't place package name! */
 
+/* package whatever; // don't place package name! */
+
 import java.util.*;
 import java.lang.*;
 import java.io.*;
@@ -55,15 +57,15 @@ class Graph
 	}
 	
 	public void printPathsUtil(int s, int d, Boolean[] visited, int[] path, int path_index){
-		visited[s] = true;
-		path[path_index] = s;
-		path_index++;
+			visited[s] = true;
+			path[path_index] = s;
+			path_index++;
 		
 		if(s==d){
-			for(int i: path)
-				System.out.print(i + " ");
+			for(int i=0; i<path_index; i++)
+				System.out.print(path[i] + " ");
 			System.out.println();
-		//	return;	
+			
 		}
 		else{
 			ArrayList<Integer> list = adj[s];
@@ -71,7 +73,6 @@ class Graph
 				if(!visited[i])
 					printPathsUtil(i,d,visited,path,path_index);
 			}
-		
 		}
 		
 		path_index--;
